@@ -11,3 +11,11 @@ export const trendingMovies = async () => {
 
   return response.data.results;
 };
+
+export const detailMovie = async (id) => {
+  const response = await axios.get(`/3/movie/${id}`, {
+    headers: { Authorization: `Bearer ${ACCESS_KEY}` },
+  });
+
+  return response.data;
+};
