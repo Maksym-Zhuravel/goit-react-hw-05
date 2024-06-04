@@ -10,7 +10,10 @@ export default function App() {
 
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
-        <Route path="/movies" element={<div>Movies</div>}></Route>
+        <Route path="/movies" element={<div>Movies</div>}>
+          <Route path="cast" element={<div>CAST</div>}></Route>
+          <Route path="reviews" element={<div>REVIEWS</div>}></Route>
+        </Route>
         <Route path="/movies/:moviesId" element={<MoviesDetailPage />}></Route>
         <Route path="*" element={<div>PAGE NOT FOUND</div>}></Route>
       </Routes>
