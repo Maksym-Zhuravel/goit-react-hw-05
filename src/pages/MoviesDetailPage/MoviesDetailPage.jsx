@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { detailMovie } from "../../components/movies-api";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Outlet } from "react-router-dom";
 
 export default function MoviesDetailPage() {
   const [movies, setMovies] = useState([]);
@@ -28,14 +28,7 @@ export default function MoviesDetailPage() {
         src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
         alt={tagline}
       />
-      <ul>
-        <li>
-          <Link to="reviews">Reviews</Link>
-        </li>
-        <li>
-          <Link to="cast">Cast</Link>
-        </li>
-      </ul>
+      <Outlet />
     </>
   );
 }

@@ -1,3 +1,7 @@
 export default function MovieCast() {
-  return <></>;
+  return (
+    <>
+      <h2>Movie cast</h2>
+    </>
+  );
 }
