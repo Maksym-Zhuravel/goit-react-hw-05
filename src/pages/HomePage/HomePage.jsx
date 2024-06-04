@@ -9,7 +9,6 @@ export default function HomePage() {
     const fetchTrendingMovies = async () => {
       try {
         const trendingMovie = await trendingMovies();
-        console.log(trendingMovie);
         setMovies(trendingMovie);
       } catch (err) {
         console.log(err);

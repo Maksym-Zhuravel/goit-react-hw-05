@@ -19,3 +19,19 @@ export const detailMovie = async (id) => {
 
   return response.data;
 };
+
+export const reviewMovie = async (id) => {
+  const response = await axios.get(`/3/movie/${id}/reviews`, {
+    headers: { Authorization: `Bearer ${ACCESS_KEY}` },
+  });
+
+  return response.data.results;
+};
+
+export const castMovie = async (id) => {
+  const response = await axios.get(`/3/movie/${id}/credits`, {
+    headers: { Authorization: `Bearer ${ACCESS_KEY}` },
+  });
+
+  return response.data.cast;
+};

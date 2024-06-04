@@ -2,8 +2,8 @@ import { Routes, Route } from "react-router-dom";
 import Navigation from "../Navigation/Navigation";
 import HomePage from "../../pages/HomePage/HomePage";
 import MoviesDetailPage from "../../pages/MoviesDetailPage/MoviesDetailPage";
-import MovieCast from "../MovieCast/MovieCast";
 import MovieReview from "../MovieReview/MovieReview";
+import MovieCast from "../MovieCast/MovieCast";
 
 export default function App() {
   return (
@@ -11,13 +11,13 @@ export default function App() {
       <Navigation />
 
       <Routes>
-        <Route path="/" element={<HomePage />}></Route>
-        <Route path="/movies" element={<div>Movies</div>}>
-          <Route path="cast" element={<MovieReview />}></Route>
-          <Route path="reviews" element={<MovieCast />}></Route>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/movies" element={<div>Movies</div>} />
+        <Route path="/movies/:moviesId" element={<MoviesDetailPage />}>
+          <Route path="reviews" element={<MovieReview />} />
+          <Route path="cast" element={<MovieCast />} />
         </Route>
-        <Route path="/movies/:moviesId" element={<MoviesDetailPage />}></Route>
-        <Route path="*" element={<div>PAGE NOT FOUND</div>}></Route>
+        <Route path="*" element={<div>PAGE NOT FOUND</div>} />
       </Routes>
     </>
   );
