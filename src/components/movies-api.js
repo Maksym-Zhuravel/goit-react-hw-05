@@ -35,3 +35,14 @@ export const castMovie = async (id) => {
 
   return response.data.cast;
 };
+
+export const searchMovie = async (topic) => {
+  const response = await axios.get("/3/search/movie", {
+    params: {
+      query: topic,
+    },
+    headers: { Authorization: `Bearer ${ACCESS_KEY}` },
+  });
+
+  return response.data.results;
+};
