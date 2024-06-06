@@ -36,10 +36,11 @@ export const castMovie = async (id) => {
   return response.data.cast;
 };
 
-export const searchMovie = async (topic) => {
+export const searchMovie = async (topic, page) => {
   const response = await axios.get("/3/search/movie", {
     params: {
       query: topic,
+      page: page,
     },
     headers: { Authorization: `Bearer ${ACCESS_KEY}` },
   });
