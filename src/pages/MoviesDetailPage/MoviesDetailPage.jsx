@@ -1,10 +1,19 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { detailMovie } from "../../components/movies-api";
-import { useParams, Outlet, NavLink } from "react-router-dom";
+import {
+  useParams,
+  Outlet,
+  NavLink,
+  useLocation,
+  Link,
+} from "react-router-dom";
 
 export default function MoviesDetailPage() {
   const [movies, setMovies] = useState([]);
   const { moviesId } = useParams();
+
+  const location = useLocation();
+  const backLinkRef = useRef(location.state ?? "/movies");
 
   useEffect(() => {
     const fetchDetailMovies = async () => {
@@ -22,6 +31,7 @@ export default function MoviesDetailPage() {
 
   return (
     <>
+      <Link to={backLinkRef.current}>Go back</Link>
       <p>{original_title}</p>
       <p>{overview}</p>
       <img

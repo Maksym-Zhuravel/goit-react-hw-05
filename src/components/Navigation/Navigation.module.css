@@ -1,0 +1,13 @@
+.link {
+  font-size: 30px;
+  text-decoration: none;
+  color: black;
+}
+
+.active {
+  color: orangered;
+}
+
+.item {
+  list-style: none;
+}

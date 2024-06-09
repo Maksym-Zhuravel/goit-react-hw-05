@@ -1,0 +1,12 @@
+.item {
+  font-size: 20px;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+.link:hover {
+  color: orange;
+}
