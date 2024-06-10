@@ -1,7 +1,7 @@
-export default function LoadMoreBtn({ onClick, disabled }) {
+export default function NextPageBtn({ onClick, disabled }) {
   return (
     <button type="button" onClick={onClick} disabled={disabled}>
-      Load More
+      Next Page
     </button>
   );
 }
