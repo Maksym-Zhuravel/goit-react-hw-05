@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 export default function Navigation() {
   return (
-    <nav>
+    <nav className={css.nav}>
       <ul>
         <li className={css.item}>
           <NavLink

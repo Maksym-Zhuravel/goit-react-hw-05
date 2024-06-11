@@ -1,5 +1,7 @@
 import { useEffect, useState, useRef } from "react";
+import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import { detailMovie } from "../../components/movies-api";
+import css from "../MoviesDetailPage/MoviesDetailPage.module.css";
 import {
   useParams,
   Outlet,
@@ -31,8 +33,14 @@ export default function MoviesDetailPage() {
 
   return (
     <>
-      <Link to={backLinkRef.current}>Go back</Link>
-      <p>{original_title}</p>
+      <Link to={backLinkRef.current} className={css.link}>
+        <MdKeyboardDoubleArrowLeft />
+        Go back
+      </Link>
+
+      <p>
+        <b>{original_title}</b>
+      </p>
       <p>{overview}</p>
       <img
         src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
