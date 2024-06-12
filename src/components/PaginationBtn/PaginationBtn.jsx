@@ -1,7 +1,7 @@
-import css from "../NextPageBtn/NextPageBtn.module.css";
+import css from "./PaginationBtn.module.css";
 import clsx from "clsx";
 
-export default function NextPageBtn({ onClick, disabled }) {
+export default function PaginationBtn({ children, onClick, disabled }) {
   return (
     <button
       type="button"
@@ -9,7 +9,7 @@ export default function NextPageBtn({ onClick, disabled }) {
       disabled={disabled}
       className={clsx(disabled === true ? css.disabled : css.button)}
     >
-      Next Page
+      {children}
     </button>
   );
 }

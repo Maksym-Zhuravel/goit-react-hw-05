@@ -3,8 +3,7 @@ import { searchMovie } from "../../components/movies-api";
 import { useSearchParams } from "react-router-dom";
 import MovieList from "../../components/MovieList/MovieList";
 import SearchBar from "../../components/SearchBar/SearchBar";
-import NextPageBtn from "../../components/NextPageBtn/NextPageBtn";
-import PreviousPageBtn from "../../components/PreviousPageBtn/PreviousPageBtn";
+import PaginationBtn from "../../components/PaginationBtn/PaginationBtn";
 import Loader from "../../components/Loader/Loader";
 
 export default function MoviesPage() {
@@ -58,10 +57,14 @@ export default function MoviesPage() {
       {loading && <Loader />}
       <MovieList movies={movies} />
       {movies.length > 0 ? (
-        <PreviousPageBtn onClick={handlePreviousPage} disabled={page < 2} />
+        <PaginationBtn onClick={handlePreviousPage} disabled={page < 2}>
+          Previous page
+        </PaginationBtn>
       ) : undefined}
       {movies.length > 0 ? (
-        <NextPageBtn onClick={handleNextPage} disabled={movies.length < 20} />
+        <PaginationBtn onClick={handleNextPage} disabled={movies.length < 20}>
+          Next page
+        </PaginationBtn>
       ) : undefined}
     </>
   );
